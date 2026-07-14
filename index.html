@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pritam Chakraborty — Virtual Assistant & Data Entry Specialist</title>
+<meta name="description" content="Remote virtual assistant based in Dhaka: social content, resume/LinkedIn rewrites, product descriptions, data entry & document formatting, short-video scripts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0E1A2B;
+    --navy-mid:#16233A;
+    --gold:#C9A24B;
+    --gold-soft:#8A6E33;
+    --paper:#F3EFE6;
+    --ink:#1B2230;
+    --ink-soft:#5B6270;
+    --rule: rgba(201,162,75,0.28);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:0.04em;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
+
+  /* ledger rule texture, used sparingly */
+  .ruled{
+    background-image: repeating-linear-gradient(
+      to bottom, transparent, transparent 37px, var(--rule) 38px
+    );
+  }
+
+  header.top{
+    position:sticky; top:0; z-index:10;
+    background:rgba(243,239,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--rule);
+  }
+  header.top .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;
+  }
+  .seal{
+    width:28px; height:28px; border-radius:50%;
+    border:1.4px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace; font-size:0.62rem; color:var(--gold-soft);
+    letter-spacing:0.02em;
+  }
+  nav a{
+    font-size:0.82rem; text-decoration:none; color:var(--ink-soft);
+    margin-left:26px; text-transform:uppercase; letter-spacing:0.08em;
+    transition:color .15s ease;
+  }
+  nav a:hover, nav a:focus-visible{color:var(--ink);}
+
+  /* HERO */
+  .hero{
+    padding:96px 0 84px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(to bottom, transparent, transparent 46px, var(--rule) 47px),
+                       repeating-linear-gradient(to right, transparent, transparent 220px, var(--rule) 221px);
+    opacity:0.55;
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;}
+  .eyebrow{
+    font-size:0.78rem; color:var(--gold-soft); text-transform:uppercase;
+    letter-spacing:0.14em; margin-bottom:18px;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(2.3rem, 5.2vw, 3.9rem);
+    line-height:1.05;
+    max-width:14ch;
+    color:var(--navy-deep);
+  }
+  h1 em{
+    font-style:italic; font-weight:500; color:var(--gold-soft);
+  }
+  .lede{
+    max-width:52ch; margin-top:24px; font-size:1.08rem; color:var(--ink-soft);
+  }
+  .cta-row{
+    display:flex; flex-wrap:wrap; gap:14px; margin-top:36px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 22px; border-radius:2px;
+    font-size:0.86rem; text-decoration:none; font-weight:500;
+    border:1.4px solid transparent; transition:all .15s ease;
+  }
+  .btn-primary{background:var(--navy-deep); color:var(--paper);}
+  .btn-primary:hover{background:var(--navy-mid);}
+  .btn-ghost{border-color:var(--navy-deep); color:var(--navy-deep);}
+  .btn-ghost:hover{background:var(--navy-deep); color:var(--paper);}
+
+  .stat-strip{
+    margin-top:64px; display:flex; flex-wrap:wrap; gap:0;
+    border-top:1px solid var(--rule); padding-top:22px;
+  }
+  .stat{flex:1 1 160px; padding-right:24px;}
+  .stat .num{font-family:'Fraunces', serif; font-size:1.5rem; color:var(--navy-deep);}
+  .stat .lbl{font-size:0.74rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.06em; margin-top:2px;}
+
+  /* SECTION HEADS */
+  section{padding:70px 0;}
+  .sec-head{margin-bottom:44px;}
+  .sec-head .tag{font-size:0.76rem; color:var(--gold-soft); text-transform:uppercase; letter-spacing:0.14em; margin-bottom:10px;}
+  .sec-head h2{
+    font-family:'Fraunces', serif; font-weight:600; font-size:2rem; color:var(--navy-deep);
+  }
+
+  /* SERVICES */
+  .services{background:var(--navy-deep); color:var(--paper);}
+  .services .tag{color:var(--gold);}
+  .services h2{color:var(--paper);}
+  .svc-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:1px;
+    background:rgba(243,239,230,0.14);
+    border:1px solid rgba(243,239,230,0.14);
+  }
+  .svc{
+    background:var(--navy-deep); padding:30px 26px; min-height:190px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .svc .idx{font-family:'IBM Plex Mono', monospace; font-size:0.75rem; color:var(--gold);}
+  .svc h3{font-family:'Fraunces', serif; font-weight:500; font-size:1.18rem; margin-top:16px;}
+  .svc p{font-size:0.88rem; color:rgba(243,239,230,0.68); margin-top:10px;}
+
+  /* ABOUT */
+  .about .wrap{display:grid; grid-template-columns:1fr 1.3fr; gap:56px; align-items:start;}
+  .about blockquote{
+    font-family:'Fraunces', serif; font-style:italic; font-size:1.3rem; color:var(--navy-deep);
+    border-left:2px solid var(--gold); padding-left:20px; line-height:1.4;
+  }
+  .about .cred{margin-top:22px; font-size:0.85rem; color:var(--ink-soft);}
+  .about-copy p{margin-bottom:16px; color:var(--ink-soft);}
+  .platform-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;}
+  .chip{
+    font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
+    border:1px solid var(--rule); padding:6px 12px; color:var(--gold-soft);
+  }
+
+  /* CONTACT */
+  .contact{background:var(--navy-mid); color:var(--paper);}
+  .contact .tag{color:var(--gold);}
+  .contact h2{color:var(--paper);}
+  .contact-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:28px 40px;
+    margin-top:8px;
+  }
+  .clink{
+    display:block; padding:16px 0; border-bottom:1px solid rgba(243,239,230,0.16);
+    text-decoration:none;
+  }
+  .clink .k{font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold);}
+  .clink .v{font-family:'Fraunces', serif; font-size:1.12rem; margin-top:6px; color:var(--paper);}
+  .clink:hover .v{color:var(--gold);}
+
+  .pay-note{
+    margin-top:52px; padding-top:28px; border-top:1px solid rgba(243,239,230,0.16);
+    font-size:0.85rem; color:rgba(243,239,230,0.72); max-width:60ch;
+  }
+  .pay-note .k{color:var(--gold); font-family:'IBM Plex Mono', monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em; display:block; margin-bottom:8px;}
+
+  footer{
+    padding:30px 0; text-align:center; font-size:0.78rem; color:var(--ink-soft);
+    border-top:1px solid var(--rule);
+  }
+
+  @media (max-width:720px){
+    .about .wrap{grid-template-columns:1fr;}
+    nav a{margin-left:16px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="seal">PC</span> Pritam Chakraborty</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow mono">Remote Virtual Assistant · Dhaka, Bangladesh</div>
+    <h1>Your inbox, spreadsheets, and socials — <em>handled.</em></h1>
+    <p class="lede">I'm Pritam — a remote assistant who keeps busy founders and small teams organized: content that sounds like you, documents that look right, and data that's clean and accurate. Available now, starting at $8/hr.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://wa.me/+8801621521966" target="_blank" rel="noopener">Message on WhatsApp</a>
+      <a class="btn btn-ghost" href="#services">See services</a>
+    </div>
+    <div class="stat-strip">
+      <div class="stat"><div class="num">5</div><div class="lbl mono">Core services</div></div>
+      <div class="stat"><div class="num">5</div><div class="lbl mono">Platforms active</div></div>
+      <div class="stat"><div class="num">$8/hr</div><div class="lbl mono">Standard rate</div></div>
+      <div class="stat"><div class="num">GMT+6</div><div class="lbl mono">Based in Dhaka</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag mono">What I do</div>
+      <h2>Five ways I can take work off your plate</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="idx">01</span>
+        <div>
+          <h3>Social media content</h3>
+          <p>Captions, post copy, and content calendars written to fit your brand voice and posting cadence.</p>
+        </div>
+      </div>
+      <div class="svc">
+        <span class="idx">02</span>
+        <div>
+          <h3>Resume &amp; LinkedIn rewrites</h3>
+          <p>Clear, keyword-aware resumes and LinkedIn profiles built to get past filters and read well by humans.</p>
+        </div>
+      </div>
+      <div class="svc">
+        <span class="idx">03</span>
+        <div>
+          <h3>Product descriptions</h3>
+          <p>Listing copy for ecommerce and marketplaces that's accurate, scannable, and written to convert.</p>
+        </div>
+      </div>
+      <div class="svc">
+        <span class="idx">04</span>
+        <div>
+          <h3>Data entry &amp; document formatting</h3>
+          <p>Spreadsheet cleanup, PDF-to-Word conversion, directory entry, and polished document formatting.</p>
+        </div>
+      </div>
+      <div class="svc">
+        <span class="idx">05</span>
+        <div>
+          <h3>Short-video scripts &amp; hooks</h3>
+          <p>Scripts for Reels, TikTok, and Shorts with hook lines built to stop the scroll in the first 3 seconds.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <blockquote>"Started with zero budget — just a smartphone."</blockquote>
+      <div class="cred">Now working across five platforms, one client at a time.</div>
+    </div>
+    <div class="about-copy">
+      <p>I'm a freelance virtual assistant and data entry specialist based in Dhaka, Bangladesh, currently studying Geography &amp; Environment at National University. I work remotely with clients who need reliable, detail-checked support — content, documents, or data — without managing a full-time hire.</p>
+      <p>I built my freelance practice from scratch: profile, portfolio, and process, all self-taught. I evaluate every job carefully, deliver on time, and communicate clearly throughout.</p>
+      <div class="platform-row">
+        <span class="chip">Upwork</span>
+        <span class="chip">Fiverr</span>
+        <span class="chip">PeoplePerHour</span>
+        <span class="chip">Guru.com</span>
+        <span class="chip">LinkedIn</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag mono">Get in touch</div>
+      <h2>Let's talk about your project</h2>
+    </div>
+    <div class="contact-grid">
+      <a class="clink" href="https://wa.me/+8801621521966" target="_blank" rel="noopener">
+        <div class="k">WhatsApp</div><div class="v">+880 1621‑521966</div>
+      </a>
+      <a class="clink" href="https://t.me/pritamchakraborty_va" target="_blank" rel="noopener">
+        <div class="k">Telegram</div><div class="v">@pritamchakraborty_va</div>
+      </a>
+      <a class="clink" href="https://www.linkedin.com/in/pritam-chakraborty-31961b276" target="_blank" rel="noopener">
+        <div class="k">LinkedIn</div><div class="v">Pritam Chakraborty</div>
+      </a>
+      <a class="clink" href="https://www.facebook.com/share/18wx868VRH/" target="_blank" rel="noopener">
+        <div class="k">Facebook</div><div class="v">pritam.va</div>
+      </a>
+      <a class="clink" href="https://instagram.com/pritam_virtualassist" target="_blank" rel="noopener">
+        <div class="k">Instagram &amp; Threads</div><div class="v">@pritam_virtualassist</div>
+      </a>
+      <a class="clink" href="https://x.com/pritam_va" target="_blank" rel="noopener">
+        <div class="k">X</div><div class="v">@pritam_va</div>
+      </a>
+    </div>
+
+    <div class="pay-note">
+      <span class="k">Payment</span>
+      Bangladesh clients can pay via bKash or Rocket. International clients — message me directly and I'll share secure payment details (nsave / bank transfer).
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Pritam Chakraborty · Remote Virtual Assistant, Dhaka, Bangladesh</div>
+</footer>
+
+</body>
+</html>
